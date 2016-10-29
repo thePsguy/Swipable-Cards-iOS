@@ -6,5 +6,7 @@ target 'Swipable Cards iOS' do
   use_frameworks!
 
   # Pods for Swipable Cards iOS
-pod 'Koloda', '~> 3.1.2'
+  pod "Koloda",
+	:git => 'https://github.com/Yalantis/Koloda.git',
+	:branch => 'swift-3'
 end
