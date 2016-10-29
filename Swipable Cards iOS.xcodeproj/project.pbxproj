@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23C5988789B96AA483772A0E /* Pods_Swipable_Cards_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1DD0FB6F458985BBE8D2C0 /* Pods_Swipable_Cards_iOS.framework */; };
 		4DC1EBDD1DC4818E00F28162 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1EBDC1DC4818E00F28162 /* AppDelegate.swift */; };
 		4DC1EBDF1DC4818E00F28162 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1EBDE1DC4818E00F28162 /* ViewController.swift */; };
 		4DC1EBE21DC4818E00F28162 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC1EBE01DC4818E00F28162 /* Main.storyboard */; };
@@ -22,6 +23,9 @@
 		4DC1EBE31DC4818E00F28162 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DC1EBE61DC4818E00F28162 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DC1EBE81DC4818E00F28162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A0EFAB19CE6741ED71F947B /* Pods-Swipable Cards iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swipable Cards iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swipable Cards iOS/Pods-Swipable Cards iOS.release.xcconfig"; sourceTree = "<group>"; };
+		7A1DD0FB6F458985BBE8D2C0 /* Pods_Swipable_Cards_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swipable_Cards_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE18ADE8E05969E95316EE1B /* Pods-Swipable Cards iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swipable Cards iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swipable Cards iOS/Pods-Swipable Cards iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C5988789B96AA483772A0E /* Pods_Swipable_Cards_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				4DC1EBDB1DC4818E00F28162 /* Swipable Cards iOS */,
 				4DC1EBDA1DC4818E00F28162 /* Products */,
+				65DCD523439E74E323833EE9 /* Pods */,
+				B9656B688E4E1AF3432DD585 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = "Swipable Cards iOS";
 			sourceTree = "<group>";
 		};
+		65DCD523439E74E323833EE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE18ADE8E05969E95316EE1B /* Pods-Swipable Cards iOS.debug.xcconfig */,
+				7A0EFAB19CE6741ED71F947B /* Pods-Swipable Cards iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B9656B688E4E1AF3432DD585 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A1DD0FB6F458985BBE8D2C0 /* Pods_Swipable_Cards_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DC1EBEB1DC4818E00F28162 /* Build configuration list for PBXNativeTarget "Swipable Cards iOS" */;
 			buildPhases = (
+				54BFF671B2D3FA70A59CBC40 /* [CP] Check Pods Manifest.lock */,
 				4DC1EBD51DC4818E00F28162 /* Sources */,
 				4DC1EBD61DC4818E00F28162 /* Frameworks */,
 				4DC1EBD71DC4818E00F28162 /* Resources */,
+				8037282BBE7489DB2C77D34D /* [CP] Embed Pods Frameworks */,
+				CD162585C8F9E92BE2CB63E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54BFF671B2D3FA70A59CBC40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8037282BBE7489DB2C77D34D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swipable Cards iOS/Pods-Swipable Cards iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD162585C8F9E92BE2CB63E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swipable Cards iOS/Pods-Swipable Cards iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DC1EBD51DC4818E00F28162 /* Sources */ = {
@@ -257,6 +332,7 @@
 		};
 		4DC1EBEC1DC4818E00F28162 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE18ADE8E05969E95316EE1B /* Pods-Swipable Cards iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V6JUB3D3PN;
@@ -270,6 +346,7 @@
 		};
 		4DC1EBED1DC4818E00F28162 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A0EFAB19CE6741ED71F947B /* Pods-Swipable Cards iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V6JUB3D3PN;
@@ -300,6 +377,7 @@
 				4DC1EBED1DC4818E00F28162 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
