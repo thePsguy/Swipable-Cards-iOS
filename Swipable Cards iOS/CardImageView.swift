@@ -21,8 +21,17 @@ class CardImageView: UIImageView {
     var activityIndicator: UIActivityIndicatorView?
     
     override func layoutSubviews() {
-        self.layer.cornerRadius = 15
-        self.clipsToBounds = true
+        
+        let path = UIBezierPath(roundedRect:self.bounds,
+                                byRoundingCorners:[.topRight, .topLeft],
+                                cornerRadii: CGSize(width: 20, height:  20))
+        
+        let maskLayer = CAShapeLayer()
+        
+        maskLayer.path = path.cgPath
+        self.layer.mask = maskLayer
+        
+//        self.clipsToBounds = true
         self.image = UIImage(named: "SolidGrey")
         self.contentMode = .scaleAspectFill
     }

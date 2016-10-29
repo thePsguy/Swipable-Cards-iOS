@@ -18,10 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovu-lr-Mod" customClass="KolodaView" customModule="Koloda">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6X-aD-0qY">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="0nk-nK-OKK"/>
+                                    <constraint firstAttribute="height" constant="75" id="z9n-kF-s51"/>
+                                </constraints>
                                 <state key="normal" image="No"/>
                                 <connections>
                                     <action selector="noTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dK-Pp-htd"/>
@@ -40,42 +41,49 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cool title here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffL-3e-hCU">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="WZ7-6J-I9E"/>
+                                    <constraint firstAttribute="height" constant="21" id="e44-dP-hzJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                                 <color key="textColor" red="0.50507614213197971" green="0.50507614213197971" blue="0.50507614213197971" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search" translatesAutoresizingMaskIntoConstraints="NO" id="uWT-L2-Ka4"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2M-EB-wE8" customClass="NetworkImageView" customModule="Swipable_Cards_iOS" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search" translatesAutoresizingMaskIntoConstraints="NO" id="uWT-L2-Ka4">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="XbK-gt-nRv"/>
+                                    <constraint firstAttribute="width" constant="26" id="m7b-F9-dmK"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovu-lr-Mod" customClass="KolodaView" customModule="Koloda">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2M-EB-wE8">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="OpE-dk-AkA"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="top" secondItem="uWT-L2-Ka4" secondAttribute="bottom" constant="16" id="0jU-MJ-TOI"/>
-                            <constraint firstItem="ffL-3e-hCU" firstAttribute="centerY" secondItem="uWT-L2-Ka4" secondAttribute="centerY" id="5rR-MD-sr1"/>
-                            <constraint firstItem="W2M-EB-wE8" firstAttribute="centerX" secondItem="L6G-9l-ztr" secondAttribute="centerX" id="E4o-oU-6hG"/>
-                            <constraint firstItem="W2M-EB-wE8" firstAttribute="top" secondItem="Ovu-lr-Mod" secondAttribute="bottom" constant="28" id="K0H-7D-C50"/>
-                            <constraint firstItem="ffL-3e-hCU" firstAttribute="centerX" secondItem="Ovu-lr-Mod" secondAttribute="centerX" id="Lo2-0r-x0P"/>
-                            <constraint firstItem="B6X-aD-0qY" firstAttribute="top" secondItem="UcX-SN-XrO" secondAttribute="top" id="M2Z-Ku-aBb"/>
-                            <constraint firstItem="uWT-L2-Ka4" firstAttribute="trailing" secondItem="Ovu-lr-Mod" secondAttribute="trailing" id="NeH-eJ-AwC"/>
-                            <constraint firstItem="L6G-9l-ztr" firstAttribute="top" secondItem="W2M-EB-wE8" secondAttribute="bottom" constant="8" symbolic="YES" id="TCr-ri-xoG"/>
-                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="centerX" secondItem="W2M-EB-wE8" secondAttribute="centerX" id="UvU-OS-jFH"/>
-                            <constraint firstItem="W2M-EB-wE8" firstAttribute="leading" secondItem="B6X-aD-0qY" secondAttribute="trailing" constant="18" id="Wrz-qI-ZSL"/>
-                            <constraint firstItem="ffL-3e-hCU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="11" id="XmT-fV-Tv4"/>
-                            <constraint firstItem="B6X-aD-0qY" firstAttribute="top" secondItem="Ovu-lr-Mod" secondAttribute="bottom" constant="66" id="dkQ-Io-udy"/>
-                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="trailing" secondItem="UcX-SN-XrO" secondAttribute="trailing" id="eQe-9J-Zxv"/>
-                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="leading" secondItem="B6X-aD-0qY" secondAttribute="leading" id="kfN-na-8fw"/>
-                            <constraint firstItem="uWT-L2-Ka4" firstAttribute="leading" secondItem="ffL-3e-hCU" secondAttribute="trailing" constant="68" id="luZ-G6-3zm"/>
-                            <constraint firstItem="uWT-L2-Ka4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="o7s-Ry-xaa"/>
-                            <constraint firstItem="ffL-3e-hCU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="94" id="pOl-07-eDK"/>
-                            <constraint firstItem="L6G-9l-ztr" firstAttribute="leading" secondItem="B6X-aD-0qY" secondAttribute="trailing" constant="4" id="q6n-ln-VvE"/>
-                            <constraint firstItem="B6X-aD-0qY" firstAttribute="bottom" secondItem="L6G-9l-ztr" secondAttribute="bottom" id="qqr-WQ-PAU"/>
-                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uDP-Mh-Sc7"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="B6X-aD-0qY" secondAttribute="bottom" constant="42" id="ydb-Bb-YZP"/>
+                            <constraint firstItem="B6X-aD-0qY" firstAttribute="top" secondItem="UcX-SN-XrO" secondAttribute="top" id="C5I-GQ-IOx"/>
+                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="centerX" secondItem="W2M-EB-wE8" secondAttribute="centerX" id="DMC-SK-8hU"/>
+                            <constraint firstItem="uWT-L2-Ka4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="DQz-ps-GfH"/>
+                            <constraint firstItem="W2M-EB-wE8" firstAttribute="top" secondItem="Ovu-lr-Mod" secondAttribute="bottom" constant="94" id="H12-DN-lXY"/>
+                            <constraint firstItem="UcX-SN-XrO" firstAttribute="leading" secondItem="W2M-EB-wE8" secondAttribute="trailing" constant="31" id="JPr-CO-Sjr"/>
+                            <constraint firstItem="ffL-3e-hCU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="11" id="JyL-9c-nGc"/>
+                            <constraint firstItem="L6G-9l-ztr" firstAttribute="top" secondItem="W2M-EB-wE8" secondAttribute="bottom" constant="8" symbolic="YES" id="MHZ-qn-mez"/>
+                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="top" secondItem="uWT-L2-Ka4" secondAttribute="bottom" constant="12" id="Mew-7v-2cX"/>
+                            <constraint firstItem="uWT-L2-Ka4" firstAttribute="leading" secondItem="ffL-3e-hCU" secondAttribute="trailing" constant="65" id="VA9-73-N2S"/>
+                            <constraint firstItem="W2M-EB-wE8" firstAttribute="leading" secondItem="B6X-aD-0qY" secondAttribute="trailing" constant="31" id="Ymo-9l-1Zq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L6G-9l-ztr" secondAttribute="bottom" constant="42" id="eDW-0n-Sa0"/>
+                            <constraint firstItem="ffL-3e-hCU" firstAttribute="centerY" secondItem="uWT-L2-Ka4" secondAttribute="centerY" id="eFA-tz-IiE"/>
+                            <constraint firstItem="uWT-L2-Ka4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="eLj-MR-fIy"/>
+                            <constraint firstItem="W2M-EB-wE8" firstAttribute="bottom" secondItem="UcX-SN-XrO" secondAttribute="bottom" id="hnb-fA-1px"/>
+                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="my8-XX-Sgz"/>
+                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="trailing" secondItem="UcX-SN-XrO" secondAttribute="trailing" id="pAq-d7-GVs"/>
+                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qkw-48-hut"/>
+                            <constraint firstItem="Ovu-lr-Mod" firstAttribute="leading" secondItem="B6X-aD-0qY" secondAttribute="leading" id="xNb-gf-BGt"/>
+                            <constraint firstItem="B6X-aD-0qY" firstAttribute="bottom" secondItem="W2M-EB-wE8" secondAttribute="bottom" id="xvb-VK-2f3"/>
+                            <constraint firstItem="L6G-9l-ztr" firstAttribute="centerX" secondItem="Ovu-lr-Mod" secondAttribute="centerX" id="yIB-1E-Dfh"/>
+                            <constraint firstItem="ffL-3e-hCU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="94" id="ywB-e9-R7n"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Home" id="X9W-fT-LEj"/>

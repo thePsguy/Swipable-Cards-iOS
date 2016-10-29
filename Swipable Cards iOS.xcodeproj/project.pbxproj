@@ -23,7 +23,8 @@
 		4DC1EBFE1DC4E8E700F28162 /* FacebookPhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1EBFD1DC4E8E700F28162 /* FacebookPhotosManager.swift */; };
 		4DC1EC001DC4F8E300F28162 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1EBFF1DC4F8E300F28162 /* CardImageView.swift */; };
 		4DC1EC021DC5109D00F28162 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1EC011DC5109D00F28162 /* CardView.swift */; };
-		4DC1EC041DC5141300F28162 /* NetworkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1EC031DC5141300F28162 /* NetworkImageView.swift */; };
+		4DC1EC0E1DC5243D00F28162 /* CardLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1EC0D1DC5243D00F28162 /* CardLabelView.swift */; };
+		4DC1EC101DC52B2700F28162 /* FacebookPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1EC0F1DC52B2700F28162 /* FacebookPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +46,8 @@
 		4DC1EBFD1DC4E8E700F28162 /* FacebookPhotosManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhotosManager.swift; sourceTree = "<group>"; };
 		4DC1EBFF1DC4F8E300F28162 /* CardImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 		4DC1EC011DC5109D00F28162 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		4DC1EC031DC5141300F28162 /* NetworkImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImageView.swift; sourceTree = "<group>"; };
+		4DC1EC0D1DC5243D00F28162 /* CardLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLabelView.swift; sourceTree = "<group>"; };
+		4DC1EC0F1DC52B2700F28162 /* FacebookPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhoto.swift; sourceTree = "<group>"; };
 		7A0EFAB19CE6741ED71F947B /* Pods-Swipable Cards iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swipable Cards iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swipable Cards iOS/Pods-Swipable Cards iOS.release.xcconfig"; sourceTree = "<group>"; };
 		7A1DD0FB6F458985BBE8D2C0 /* Pods_Swipable_Cards_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swipable_Cards_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE18ADE8E05969E95316EE1B /* Pods-Swipable Cards iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swipable Cards iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swipable Cards iOS/Pods-Swipable Cards iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,22 +90,71 @@
 		4DC1EBDB1DC4818E00F28162 /* Swipable Cards iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4DC1EBFA1DC4D88B00F28162 /* Swipable Cards iOS.entitlements */,
-				4DC1EBDC1DC4818E00F28162 /* AppDelegate.swift */,
-				4DC1EBF81DC4D56A00F28162 /* LoginViewController.swift */,
-				4DC1EBDE1DC4818E00F28162 /* HomeViewController.swift */,
-				4DC1EBFF1DC4F8E300F28162 /* CardImageView.swift */,
-				4DC1EC011DC5109D00F28162 /* CardView.swift */,
-				4DC1EBFD1DC4E8E700F28162 /* FacebookPhotosManager.swift */,
-				4DC1EC031DC5141300F28162 /* NetworkImageView.swift */,
 				4DC1EBE01DC4818E00F28162 /* Main.storyboard */,
-				4DC1EBFB1DC4DC8D00F28162 /* ProfileViewController.swift */,
+				4DC1EC091DC521CE00F28162 /* Misc */,
+				4DC1EC051DC5215E00F28162 /* ViewControllers */,
+				4DC1EC071DC521A000F28162 /* Views */,
+				4DC1EC0A1DC521E700F28162 /* Helper Classes */,
+			);
+			path = "Swipable Cards iOS";
+			sourceTree = "<group>";
+		};
+		4DC1EC051DC5215E00F28162 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DC1EBF81DC4D56A00F28162 /* LoginViewController.swift */,
 				4DC1EBEE1DC486C600F28162 /* TabBarViewController.swift */,
+				4DC1EC061DC5216A00F28162 /* Tabs */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4DC1EC061DC5216A00F28162 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				4DC1EBDE1DC4818E00F28162 /* HomeViewController.swift */,
+				4DC1EBFB1DC4DC8D00F28162 /* ProfileViewController.swift */,
+			);
+			name = Tabs;
+			sourceTree = "<group>";
+		};
+		4DC1EC071DC521A000F28162 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DC1EC081DC521A800F28162 /* Card */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4DC1EC081DC521A800F28162 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				4DC1EBFF1DC4F8E300F28162 /* CardImageView.swift */,
+				4DC1EC0D1DC5243D00F28162 /* CardLabelView.swift */,
+				4DC1EC011DC5109D00F28162 /* CardView.swift */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		4DC1EC091DC521CE00F28162 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				4DC1EBDC1DC4818E00F28162 /* AppDelegate.swift */,
+				4DC1EBFA1DC4D88B00F28162 /* Swipable Cards iOS.entitlements */,
 				4DC1EBE31DC4818E00F28162 /* Assets.xcassets */,
 				4DC1EBE51DC4818E00F28162 /* LaunchScreen.storyboard */,
 				4DC1EBE81DC4818E00F28162 /* Info.plist */,
 			);
-			path = "Swipable Cards iOS";
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		4DC1EC0A1DC521E700F28162 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4DC1EBFD1DC4E8E700F28162 /* FacebookPhotosManager.swift */,
+				4DC1EC0F1DC52B2700F28162 /* FacebookPhoto.swift */,
+			);
+			name = "Helper Classes";
 			sourceTree = "<group>";
 		};
 		65DCD523439E74E323833EE9 /* Pods */ = {
@@ -257,14 +308,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC1EC101DC52B2700F28162 /* FacebookPhoto.swift in Sources */,
 				4DC1EBF91DC4D56A00F28162 /* LoginViewController.swift in Sources */,
 				4DC1EBDF1DC4818E00F28162 /* HomeViewController.swift in Sources */,
 				4DC1EC001DC4F8E300F28162 /* CardImageView.swift in Sources */,
 				4DC1EBFC1DC4DC8D00F28162 /* ProfileViewController.swift in Sources */,
 				4DC1EBEF1DC486C600F28162 /* TabBarViewController.swift in Sources */,
 				4DC1EBFE1DC4E8E700F28162 /* FacebookPhotosManager.swift in Sources */,
+				4DC1EC0E1DC5243D00F28162 /* CardLabelView.swift in Sources */,
 				4DC1EC021DC5109D00F28162 /* CardView.swift in Sources */,
-				4DC1EC041DC5141300F28162 /* NetworkImageView.swift in Sources */,
 				4DC1EBDD1DC4818E00F28162 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

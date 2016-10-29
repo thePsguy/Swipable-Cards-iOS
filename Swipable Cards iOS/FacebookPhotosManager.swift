@@ -14,23 +14,28 @@ class FacebookPhotosManager {
     static let shared = FacebookPhotosManager()
     private init(){}
     
-    var photoIDs = [String]()
+    var photos = [FacebookPhoto]()
     
-    func getPictures(completion: @escaping (Error?, [String]?) -> Void){
+    func getPictures(completion: @escaping (Error?, [FacebookPhoto]?) -> Void){
         let photosPath = "/" + FBSDKAccessToken.current().userID + "/photos"
-        let request = FBSDKGraphRequest(graphPath: photosPath, parameters: ["fields":"data"], httpMethod: "GET")
+        let request = FBSDKGraphRequest(graphPath: photosPath, parameters: nil, httpMethod: "GET")
         
         request?.start(completionHandler: { (_, res, err) in
             if err != nil {
                 print("Request Error")
                 completion(err, nil)
             }
+            print(res)
             let photos = (res as! NSDictionary)["data"] as! NSArray
                 for photo in photos {
                     let id = (photo as! NSDictionary)["id"] as! String
-                    self.photoIDs.append(id)
+                    if let title = (photo as! NSDictionary)["name"] as? String {
+                        self.photos.append(FacebookPhoto(withID: id, andTitle: title))
+                    } else {
+                        self.photos.append(FacebookPhoto(withID: id, andTitle: "No Caption"))
+                    }
             }
-            completion(nil, self.photoIDs)
+            completion(nil, self.photos)
         })
     }
     
@@ -55,7 +60,6 @@ class FacebookPhotosManager {
             }).resume()
             
         })
-
     
     }
     
@@ -69,7 +73,7 @@ class FacebookPhotosManager {
                 completion(err, nil)
             }
             let images = (res as! NSDictionary)["images"] as! NSArray
-            let firstImage = images.firstObject as! NSDictionary
+            let firstImage = images[images.count / 2] as! NSDictionary
             let imageUrl = URL(string: firstImage["source"] as! String)
 
             URLSession.shared.dataTask(with: imageUrl!, completionHandler: { (data, response, error) -> Void in

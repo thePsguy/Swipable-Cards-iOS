@@ -13,9 +13,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var cardView: KolodaView!
     
-    var photoIDs = [String]()
+    var photos = [FacebookPhoto]()
     
-    @IBOutlet weak var profileImageView: NetworkImageView!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
@@ -42,13 +42,12 @@ class HomeViewController: UIViewController {
             }
         }
         
-        FacebookPhotosManager.shared.getPictures { (err, photoIDs) in
+        FacebookPhotosManager.shared.getPictures { (err, photos) in
             if err != nil {
                 print (err?.localizedDescription)
                 return
             }
-            print("Got photoIDs")
-            self.photoIDs = photoIDs!
+            self.photos = photos!
             self.cardView.reloadData()
         }
     
@@ -75,16 +74,15 @@ class HomeViewController: UIViewController {
 extension HomeViewController: KolodaViewDelegate, KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        print(photoIDs.count)
-        return photoIDs.count
+        return photos.count
     }
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        koloda.reloadData()
+        self.refreshImages()
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        let cardView = CardView(withImageId: photoIDs[index])
+        let cardView = CardView(withImageId: photos[index].photoID, andTitle: photos[index].title)
         return cardView
     }
     
